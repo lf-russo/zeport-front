@@ -46,12 +46,11 @@
 
       <div
         class="canvas"
+        :class="{ 'show-grid': showGridDots }"
         @dragover.prevent
         @drop="onDrop"
         @click.self="selectedId = null"
       >
-        <div class="grid-dots" v-if="showGridDots"></div>
-
         <GridLayout
           v-model:layout="layout"
           :col-num="12"
@@ -448,13 +447,9 @@ async function generateReport() {
   position: relative;
 }
 
-.grid-dots {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+.canvas.show-grid {
+  background-image: radial-gradient(circle, #c8ccd4 1.5px, transparent 1.5px);
   background-size: 20px 20px;
-  pointer-events: none;
-  opacity: 0.6;
 }
 
 .canvas-empty {
