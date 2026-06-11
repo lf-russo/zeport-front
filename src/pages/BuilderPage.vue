@@ -32,15 +32,17 @@
     <div class="builder-workspace">
       <div class="panel-widgets">
         <div class="panel-section">Widgets</div>
-        <div
-          v-for="wt in WIDGET_LIST"
-          :key="wt.type"
-          class="widget-palette-item"
-          draggable="true"
-          @dragstart="onDragStart(wt)"
-        >
-          <i :class="`ti ${wt.icon}`" aria-hidden="true"></i>
-          {{ wt.label }}
+        <div class="palette-grid">
+          <div
+            v-for="wt in WIDGET_LIST"
+            :key="wt.type"
+            class="widget-palette-item"
+            draggable="true"
+            @dragstart="onDragStart(wt)"
+          >
+            <i :class="`ti ${wt.icon}`" aria-hidden="true"></i>
+            {{ wt.label }}
+          </div>
         </div>
       </div>
 
@@ -400,7 +402,7 @@ async function generateReport() {
 }
 
 .panel-widgets {
-  width: 160px;
+  width: 192px;
   background: var(--color-surface);
   border-right: 0.5px solid var(--color-border);
   display: flex;
@@ -411,7 +413,7 @@ async function generateReport() {
 }
 
 .panel-section {
-  padding: 10px 12px 4px;
+  padding: 10px 12px 6px;
   font-size: 10px;
   color: var(--color-text-hint);
   text-transform: uppercase;
@@ -419,25 +421,36 @@ async function generateReport() {
   font-weight: 500;
 }
 
+.palette-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 0 8px;
+}
+
 .widget-palette-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 7px;
-  padding: 7px 10px;
-  margin: 1px 6px;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 6px;
   border: 0.5px solid var(--color-border);
   border-radius: var(--radius-md);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 500;
   color: var(--color-text-muted);
   cursor: grab;
   user-select: none;
+  text-align: center;
+  transition: all 0.15s;
 }
 .widget-palette-item:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
   background: var(--color-primary-light);
 }
-.widget-palette-item i { font-size: 15px; }
+.widget-palette-item i { font-size: 22px; }
 
 .canvas {
   flex: 1;

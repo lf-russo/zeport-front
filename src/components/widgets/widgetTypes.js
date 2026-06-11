@@ -2,7 +2,7 @@ export const WIDGET_TYPES = {
   line_chart: {
     type: 'line_chart',
     label: 'Linha',
-    icon: 'ti-chart-line',
+    icon: 'ti-trending-up',
     defaultSize: { w: 6, h: 4 },
     defaultConfig: {
       title: 'Gráfico de linha',
@@ -16,7 +16,7 @@ export const WIDGET_TYPES = {
   bar_chart: {
     type: 'bar_chart',
     label: 'Barras',
-    icon: 'ti-chart-bar',
+    icon: 'ti-chart-histogram',
     defaultSize: { w: 6, h: 4 },
     defaultConfig: {
       title: 'Gráfico de barras',
@@ -29,7 +29,7 @@ export const WIDGET_TYPES = {
   pie_chart: {
     type: 'pie_chart',
     label: 'Pizza',
-    icon: 'ti-chart-pie',
+    icon: 'ti-chart-pie-2',
     defaultSize: { w: 4, h: 4 },
     defaultConfig: {
       title: 'Gráfico de pizza',
@@ -41,7 +41,7 @@ export const WIDGET_TYPES = {
   donut_chart: {
     type: 'donut_chart',
     label: 'Rosca',
-    icon: 'ti-circle-half',
+    icon: 'ti-chart-donut',
     defaultSize: { w: 4, h: 4 },
     defaultConfig: {
       title: 'Gráfico de rosca',
@@ -53,7 +53,7 @@ export const WIDGET_TYPES = {
   metric_card: {
     type: 'metric_card',
     label: 'Métrica',
-    icon: 'ti-hash',
+    icon: 'ti-123',
     defaultSize: { w: 3, h: 2 },
     defaultConfig: {
       title: 'Métrica',
@@ -79,7 +79,7 @@ export const WIDGET_TYPES = {
   text_box: {
     type: 'text_box',
     label: 'Texto',
-    icon: 'ti-text-size',
+    icon: 'ti-letter-t',
     defaultSize: { w: 12, h: 1 },
     defaultConfig: {
       content: 'Título da seção',
@@ -91,7 +91,7 @@ export const WIDGET_TYPES = {
   divider: {
     type: 'divider',
     label: 'Divisor',
-    icon: 'ti-separator',
+    icon: 'ti-minus',
     defaultSize: { w: 12, h: 1 },
     defaultConfig: {}
   }
