@@ -164,7 +164,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter, RouterLink } from 'vue-router'
-import { GridLayout, GridItem } from 'vue-grid-layout'
+import { GridLayout, GridItem } from 'grid-layout-plus'
 import { useTemplateStore } from '@/stores/templates'
 import { zabbixService } from '@/services/zabbix'
 import { WIDGET_LIST, WIDGET_TYPES } from '@/components/widgets/widgetTypes.js'
