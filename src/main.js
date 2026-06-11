@@ -8,7 +8,6 @@ import {
   GridComponent, TooltipComponent, LegendComponent,
   TitleComponent, DataZoomComponent
 } from 'echarts/components'
-import 'vue-grid-layout/dist/style.css'  // <- adiciona essa linha
 
 import router from './router'
 import App from './App.vue'
