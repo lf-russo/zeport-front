@@ -33,22 +33,18 @@
         <div class="card-title"><i class="ti ti-palette" aria-hidden="true"></i>Branding</div>
         <div class="field">
           <label class="field-label">Nome da empresa</label>
-          <input type="text" v-model="form.company_name" placeholder="Internet Way Telecom" />
+          <input type="text" v-model="form.name" placeholder="Internet Way Telecom" />
         </div>
         <div class="field">
           <label class="field-label">Rodapé do relatório</label>
-          <input type="text" v-model="form.report_footer" placeholder="Empresa — NOC 24h" />
+          <input type="text" v-model="form.branding.report_footer" placeholder="Empresa — NOC 24h" />
         </div>
         <div class="field">
           <label class="field-label">Cor primária</label>
           <div class="color-row">
-            <div v-for="c in PRESET_COLORS" :key="c" class="swatch" :class="{active: form.primary_color === c}" :style="{background:c}" @click="form.primary_color = c"></div>
-            <input type="color" v-model="form.primary_color" class="color-picker" />
+            <div v-for="c in PRESET_COLORS" :key="c" class="swatch" :class="{active: form.branding.primary_color === c}" :style="{background:c}" @click="form.branding.primary_color = c"></div>
+            <input type="color" v-model="form.branding.primary_color" class="color-picker" />
           </div>
-        </div>
-        <div class="field">
-          <label class="field-label">Logo (URL ou upload)</label>
-          <input type="url" v-model="form.logo_url" placeholder="https://..." />
         </div>
       </div>
     </div>
@@ -71,10 +67,11 @@ const form = ref({
   zabbix_url: '',
   zabbix_user: '',
   zabbix_pass: '',
-  company_name: '',
-  report_footer: '',
-  primary_color: '#185FA5',
-  logo_url: ''
+  name: '',
+  branding: {
+    report_footer: '',
+    primary_color: '#185FA5',
+  }
 })
 
 const testing = ref(false)
