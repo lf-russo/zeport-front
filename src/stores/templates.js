@@ -11,7 +11,7 @@ export const useTemplateStore = defineStore('templates', () => {
     loading.value = true
     try {
       const { data } = await api.get('/templates')
-      templates.value = data
+      templates.value = data.items ?? data
     } finally {
       loading.value = false
     }
@@ -30,7 +30,7 @@ export const useTemplateStore = defineStore('templates', () => {
 
   async function save(template) {
     if (template.id) {
-      const { data } = await api.put(`/templates/${template.id}`, template)
+      const { data } = await api.patch(`/templates/${template.id}`, template)
       current.value = data
       const idx = templates.value.findIndex(t => t.id === data.id)
       if (idx >= 0) templates.value[idx] = data

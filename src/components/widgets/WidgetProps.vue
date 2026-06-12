@@ -93,6 +93,39 @@
         </div>
       </template>
 
+      <template v-if="widget.type === 'gauge'">
+        <div class="field">
+          <label class="field-label">Item Zabbix</label>
+          <select v-model="cfg.item_key" @change="emit">
+            <option value="">Selecionar item...</option>
+            <option v-for="item in items" :key="item.itemid" :value="item.key_">{{ item.name }}</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label">Valor mínimo</label>
+          <input type="number" v-model.number="cfg.min" @input="emit" />
+        </div>
+        <div class="field">
+          <label class="field-label">Valor máximo</label>
+          <input type="number" v-model.number="cfg.max" @input="emit" />
+        </div>
+        <div class="field">
+          <label class="field-label">Unidade</label>
+          <input type="text" v-model="cfg.unit" placeholder="%, ms, Mbps..." @input="emit" />
+        </div>
+        <div class="field">
+          <label class="field-label">Casas decimais</label>
+          <input type="number" v-model.number="cfg.decimals" min="0" max="4" @input="emit" />
+        </div>
+        <div class="field">
+          <label class="field-label">Cor</label>
+          <div class="color-row">
+            <div v-for="c in PRESET_COLORS" :key="c" class="swatch" :class="{ active: cfg.color === c }" :style="{ background: c }" @click="cfg.color = c; emit()"></div>
+            <input type="color" v-model="cfg.color" @input="emit" class="color-picker" />
+          </div>
+        </div>
+      </template>
+
       <template v-if="widget.type === 'problems_table'">
         <div class="field">
           <label class="field-label">Severidade mínima</label>

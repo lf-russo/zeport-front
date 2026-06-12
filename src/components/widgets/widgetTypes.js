@@ -88,6 +88,21 @@ export const WIDGET_TYPES = {
       bold: false
     }
   },
+  gauge: {
+    type: 'gauge',
+    label: 'Gauge',
+    icon: 'ti-gauge',
+    defaultSize: { w: 3, h: 3 },
+    defaultConfig: {
+      title: 'Gauge',
+      item_key: '',
+      min: 0,
+      max: 100,
+      unit: '%',
+      decimals: 1,
+      color: '#185FA5'
+    }
+  },
   divider: {
     type: 'divider',
     label: 'Divisor',

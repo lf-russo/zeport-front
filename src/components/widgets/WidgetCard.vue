@@ -46,7 +46,8 @@ const WIDGET_COMPONENTS = {
   metric_card: defineAsyncComponent(() => import('./renderers/MetricCardWidget.vue')),
   problems_table: defineAsyncComponent(() => import('./renderers/ProblemsTableWidget.vue')),
   text_box: defineAsyncComponent(() => import('./renderers/TextBoxWidget.vue')),
-  divider: defineAsyncComponent(() => import('./renderers/DividerWidget.vue'))
+  divider: defineAsyncComponent(() => import('./renderers/DividerWidget.vue')),
+  gauge: defineAsyncComponent(() => import('./renderers/GaugeWidget.vue'))
 }
 
 const widgetComponent = computed(() => WIDGET_COMPONENTS[props.widget.type] || null)
